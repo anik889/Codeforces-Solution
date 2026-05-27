@@ -1,0 +1,31 @@
+name: Sync Codeforces Solutions
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs automatically every day at midnight UTC
+  workflow_dispatch: # Allows you to run it manually with a single click
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Sync Script
+        run: python sync_cf.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync new Codeforces solutions" && git push)
