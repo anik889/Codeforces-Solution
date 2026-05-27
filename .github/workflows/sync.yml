@@ -1,9 +1,9 @@
 name: Sync Codeforces Accepted Solutions
 
 on:
-  workflow_dispatch: # Allows you to press a button to start it instantly
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Runs automatically every night at midnight
+    - cron: '0 0 * * *'
 
 jobs:
   sync:
@@ -17,10 +17,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-python-version: '3.10'
+          python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests hashlib time
+        run: pip install requests beautifulsoup4
 
       - name: Fetch and Commit Clean Codes
         env:
@@ -29,40 +29,53 @@ jobs:
         run: |
           cat << 'EOF' > run_sync.py
           import os, time, hashlib, requests
+          from bs4 import BeautifulSoup
 
           HANDLE = "Onex"
-          KEY = os.getenv("CF_KEY")
-          SECRET = os.getenv("CF_SECRET")
-
-          # Create a secure, authenticated request for Codeforces API
-          cur_time = int(time.time())
-          secret_str = f"123456/user.status?apiKey={KEY}&handle={HANDLE}&time={cur_time}#{SECRET}"
-          api_hash = hashlib.sha512(secret_str.encode('utf-8')).hexdigest()
-          url = f"https://codeforces.com/api/user.status?handle={HANDLE}&apiKey={KEY}&time={cur_time}&apiSig=123456{api_hash}"
-
-          res = requests.get(url).json()
-          if res["status"] == "OK":
-              submissions = res["result"]
-              os.makedirs("Clean_Solutions", exist_ok=True)
-              
-              for sub in submissions:
-                  if sub.get("verdict") == "OK" and "C++" in sub.get("programmingLanguage", ""):
+          
+          # Fetch public user submissions via status API
+          url = f"https://codeforces.com/api/user.status?handle={HANDLE}"
+          
+          try:
+              res = requests.get(url).json()
+              if res["status"] == "OK":
+                  submissions = res["result"]
+                  os.makedirs("Clean_Solutions", exist_ok=True)
+                  
+                  accepted_dict = {}
+                  for sub in submissions:
+                      if sub.get("verdict") == "OK" and "C++" in sub.get("programmingLanguage", ""):
+                          prob = sub["problem"]
+                          prob_id = f"{prob.get('contestId')}{prob.get('index')}"
+                          if prob_id not in accepted_dict:
+                              accepted_dict[prob_id] = sub
+                  
+                  print(f"Found {len(accepted_dict)} unique solutions to sync.")
+                  
+                  for sub in list(accepted_dict.values()):
                       contest = sub["contestId"]
                       idx = sub["problem"]["index"]
+                      sub_id = sub["id"]
                       name = sub["problem"]["name"].replace(" ", "_")
                       filename = f"Clean_Solutions/{contest}{idx}-{name}.cpp"
                       
-                      # Skip downloading if file already exists in repo
-                      if os.path.exists(filename): continue
+                      if os.path.exists(filename): 
+                          continue
+                          
+                      # Directly scrape the submission page raw code block natively inside the cloud
+                      sub_url = f"https://codeforces.com/contest/{contest}/submission/{sub_id}"
+                      page = requests.get(sub_url, headers={"User-Agent": "Mozilla/5.0"})
                       
-                      # Safely request code payload via API access
-                      sub_id = sub["id"]
-                      src_url = f"https://codeforces.com/api/contest.status?contestId={contest}&apiKey={KEY}&time={cur_time}&apiSig=123456{api_hash}"
-                      # Write file natively
-                      with open(filename, "w", encoding="utf-8") as f:
-                          f.write(f"// Submission ID: {sub_id}\n// Problem: {contest}{idx}\n")
-                      print(f"Synced: {filename}")
-                      time.sleep(2) # Safe database delay
+                      if page.status_code == 200:
+                          soup = BeautifulSoup(page.text, "html.parser")
+                          code_block = soup.find("pre", id="program-source-text")
+                          if code_block:
+                              with open(filename, "w", encoding="utf-8") as f:
+                                  f.write(code_block.text)
+                              print(f"Successfully saved: {filename}")
+                              time.sleep(2.5) # Protect against Codeforces rate blocking
+          except Exception as e:
+              print(f"Execution Error: {e}")
           EOF
           python run_sync.py
 
