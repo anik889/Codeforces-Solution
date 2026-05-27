@@ -1,113 +1,126 @@
-# Codeforces Contest Solutions
+# ⚙️ Codeforces CP Dashboard
 
 <div align="center">
 
-Repository containing my Codeforces contest submissions, organized by division and contest round.
+### Competitive Programming Progress Tracker
 
-<img src="https://img.shields.io/badge/Language-C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
-<img src="https://img.shields.io/badge/Platform-Codeforces-1F8ACB?style=flat-square&logo=codeforces&logoColor=white"/>
-<img src="https://img.shields.io/badge/Status-Active-success?style=flat-square"/>
+<img src="https://img.shields.io/badge/Focus-Problem%20Solving-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Platform-Codeforces-1F8ACB?style=for-the-badge&logo=codeforces"/>
+<img src="https://img.shields.io/badge/Language-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus"/>
 
 </div>
 
 ---
 
-## Overview
+## 📊 SYSTEM STATUS
 
-This repository serves as a structured archive of my accepted solutions from Codeforces contests.
-
-Solutions are categorized by contest division and stored inside dedicated contest folders to maintain a clean and scalable structure for long-term tracking and revision.
-
-The repository primarily focuses on:
-- Contest participation
-- Problem-solving practice
-- Consistency and speed improvement
-- Maintaining an organized submission archive
+```
+USER MODE        : ACTIVE
+TRAINING STATE   : CONTINUOUS
+FOCUS AREA       : CONTEST PROBLEMS ONLY
+ARCHIVE SYSTEM   : RATING-BASED STRUCTURE
+```
 
 ---
 
-## Repository Structure
+## 📈 PERFORMANCE DASHBOARD
 
-```bash
-📦 Codeforces-Contest-Solutions
- ┣ 📂 Div-2
- ┃ ┣ 📂 Contest-1925
- ┃ ┃ ┣ 📜 A.cpp
- ┃ ┃ ┣ 📜 B.cpp
- ┃ ┃ ┗ 📜 C.cpp
- ┃ ┗ 📂 Contest-XXXX
- ┃
- ┣ 📂 Div-3
- ┃ ┣ 📂 Contest-2012
- ┃ ┃ ┣ 📜 A.cpp
- ┃ ┃ ┗ 📜 B.cpp
- ┃ ┗ 📂 Contest-XXXX
- ┃
- ┣ 📂 Div-4
- ┃ ┣ 📂 Contest-1980
- ┃ ┃ ┣ 📜 A.cpp
- ┃ ┃ ┗ 📜 B.cpp
- ┃ ┗ 📂 Contest-XXXX
- ┃
+<div align="center">
+
+| Metric | Value |
+|:--|:--|
+| Total Problems Solved | `000` |
+| Total Contests Joined | `000` |
+| Current Focus Range | `1200 – 1600` |
+| Strongest Area | `Implementation / Observation` |
+| Weakest Area | `To Be Updated` |
+
+</div>
+
+---
+
+## 🧭 DIVISION ACTIVITY SNAPSHOT
+
+<div align="center">
+
+| Division | Contests | Problems | Efficiency |
+|:--:|:--:|:--:|:--:|
+| 🔴 Div-2 | `00` | `00` | ▓▓░░░░░░░░ |
+| 🟡 Div-3 | `00` | `00` | ▓▓▓░░░░░░░ |
+| 🟢 Div-4 | `00` | `00` | ▓▓▓▓░░░░░░ |
+
+</div>
+
+---
+
+## 📂 RATING ARCHIVE MAP
+
+```
+0800–0999   ██████████  Beginner foundation
+1000–1199   ████████░░  Basic logic building
+1200–1399   ██████░░░░  Core CP problems
+1400–1599   ████░░░░░░  Intermediate growth zone
+1600–1799   ██░░░░░░░░  Advanced thinking
+1800–1999   ░░░░░░░░░░  High difficulty range
+2000+       ░░░░░░░░░░  Expert territory
+```
+
+---
+
+## 🧠 REPOSITORY ARCHITECTURE
+
+```
+📦 Codeforces-Solutions
+ ┣ 📂 0800-0999
+ ┣ 📂 1000-1199
+ ┣ 📂 1200-1399
+ ┣ 📂 1400-1599
+ ┣ 📂 1600-1799
+ ┣ 📂 1800-1999
+ ┣ 📂 2000+
  ┗ 📜 README.md
 ```
 
 ---
 
-## Divisions
+## 🕒 RECENT EXECUTIONS
 
-| Division | Description |
-| :-- | :-- |
-| 🔴 **Div-2** | Intermediate and higher difficulty contest problems |
-| 🟡 **Div-3** | Regular contest practice and consistency building |
-| 🟢 **Div-4** | Beginner-oriented rounds and implementation practice |
-
----
-
-## Statistics
-
-| Division | Contests Participated | Problems Solved |
-| :---: | :---: | :---: |
-| 🔴 Div-2 | `00` | `00` |
-| 🟡 Div-3 | `00` | `00` |
-| 🟢 Div-4 | `00` | `00` |
-| **Total** | `00` | `00` |
-
-> Update the values manually as new contests and solutions are added.
+| Contest | Problem | Rating | Status |
+|:--:|:--|:--:|:--:|
+| 1925 | A - We Got Everything Covered! | ~1000 | AC |
+| 2012 | A - Absolute Zero | ~900 | AC |
+| 1980 | A - Problem Generator | ~800 | AC |
 
 ---
 
-## Recent Solutions
+## ⚙️ FILE SYSTEM RULE
 
-| Division | Contest | Problem | Verdict | Solution |
-| :---: | :---: | :--- | :---: | :---: |
-| 🔴 Div-2 | `1925` | `A - We Got Everything Covered!` | Accepted | [View](./Div-2/Contest-1925/A.cpp) |
-| 🟡 Div-3 | `2012` | `A - Absolute Zero` | Accepted | [View](./Div-3/Contest-2012/A.cpp) |
-| 🟢 Div-4 | `1980` | `A - Problem Generator` | Accepted | [View](./Div-4/Contest-1980/A.cpp) |
+```
+FORMAT:
+<ContestID><ProblemLetter>_<ProblemName>.cpp
+```
 
----
-
-## Environment
-
-```cpp
-Language : C++
-Compiler : GNU G++17
-Editor   : Visual Studio Code
-Platform : Codeforces
+Example:
+```
+1925A_We_Got_Everything_Covered.cpp
+2012A_Absolute_Zero.cpp
 ```
 
 ---
 
-## Notes
+## 🧩 TRAINING OBJECTIVE
 
-- Each contest is stored separately using the format `Contest-XXXX`
-- File names correspond to the original Codeforces problem indices
-- Solutions are uploaded after contest participation or practice
+```
+PRIMARY GOAL     : CONSISTENCY
+SECONDARY GOAL   : SPEED
+LONG TERM GOAL   : MASTER 1800+ RANGE
+SYSTEM MODE      : CONTINUOUS UPGRADE
+```
 
 ---
 
 <div align="center">
 
-Maintained as part of my competitive programming practice archive.
+### 🟦 STATUS: BUILDING LONG-TERM CP CONSISTENCY
 
 </div>
