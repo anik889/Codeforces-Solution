@@ -14,6 +14,7 @@ def fetch_submissions():
         return []
     return response["result"]
 
+
 def main():
     submissions = fetch_submissions()
     accepted = [s for s in submissions if s.get("verdict") == "OK"]
