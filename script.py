@@ -197,6 +197,16 @@ def main():
 
     for sub in submissions:
 
+    
+        if sub.get("verdict") != "OK":
+            continue
+
+        if "contestId" not in sub or "problem" not in sub:
+            continue
+
+        contest_id = sub["contestId"]
+        submission_id = sub["id"]
+        problem = sub["problem"]
         if sub["verdict"] != "OK":
             continue
 
