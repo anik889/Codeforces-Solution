@@ -103,14 +103,14 @@ def fetch_submissions(handle):
 # DOWNLOAD SOURCE CODE
 # =========================================================
 
-def download_source(contest_id, submission_id):
+def download_source(contest_id, submission_id, session):
 
     url = f"https://codeforces.com/contest/{contest_id}/submission/{submission_id}"
 
-    response = requests.get(url, headers=HEADERS)
+    response = session.get(url, headers=HEADERS)
 
     if response.status_code != 200:
-        print(f"[FAILED] Submission {submission_id}")
+        print(f"[FAILED HTTP] {submission_id}")
         return None
 
     soup = BeautifulSoup(response.text, "html.parser")
@@ -122,7 +122,6 @@ def download_source(contest_id, submission_id):
         return None
 
     return source.text
-
 
 # =========================================================
 # SAVE SOLUTION
@@ -190,7 +189,8 @@ def main():
     print(f"\nFetching submissions for: {HANDLE}\n")
 
     submissions = fetch_submissions(HANDLE)
-
+    session = requests.Session()
+    session.headers.update(HEADERS)
     accepted = []
 
     seen = set()
@@ -207,6 +207,7 @@ def main():
         contest_id = sub["contestId"]
         submission_id = sub["id"]
         problem = sub["problem"]
+        code = download_source(contest_id, submission_id, session)
         if sub["verdict"] != "OK":
             continue
 
@@ -234,7 +235,7 @@ def main():
         submission_id = sub["id"]
 
         problem = sub["problem"]
-
+        
         try:
 
             code = download_source(
