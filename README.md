@@ -26,7 +26,7 @@ ARCHIVE SYSTEM   : RATING-BASED STRUCTURE
 ## 📈 PERFORMANCE DASHBOARD
 
 <div align="center">
-
+<!-- DASHBOARD START -->
 | Metric | Value |
 |:--|:--|
 | Total Problems Solved | `000` |
@@ -34,7 +34,7 @@ ARCHIVE SYSTEM   : RATING-BASED STRUCTURE
 | Current Focus Range | `1200 – 1600` |
 | Strongest Area | `Implementation / Observation` |
 | Weakest Area | `To Be Updated` |
-
+<!-- DASHBOARD END -->
 </div>
 
 ---
