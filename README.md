@@ -27,17 +27,16 @@ ARCHIVE SYSTEM   : RATING-BASED STRUCTURE
 
 <div align="center">
  
-[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=Onex)](https://codeforces.com/profile/Onex)
 
-<!-- DASHBOARD_START -->
+
 | Metric | Value |
 |:--|:--|
-| Total Problems Solved | `000` |
-| Total Contests Joined | `000` |
+| Total Problems Solved | `219` |
+| Total Contests Joined | `037` |
 | Current Focus Range | `1200 – 1600` |
 | Strongest Area | `Implementation / Observation` |
 | Weakest Area | `To Be Updated` |
-<!-- DASHBOARD_END -->
+
 </div>
 
 ---
