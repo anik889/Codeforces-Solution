@@ -26,7 +26,9 @@ ARCHIVE SYSTEM   : RATING-BASED STRUCTURE
 ## 📈 PERFORMANCE DASHBOARD
 
 <div align="center">
- ![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=Onex)
+ 
+[![Codeforces Stats](https://codeforces-readme-stats.vercel.app/api/card?username=Onex)](https://codeforces.com/profile/Onex)
+
 <!-- DASHBOARD_START -->
 | Metric | Value |
 |:--|:--|
