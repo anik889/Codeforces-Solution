@@ -122,17 +122,3 @@ SYSTEM MODE      : CONTINUOUS UPGRADE
 ---
 
 <div align="center">
-
-### 🟦 STATUS: BUILDING LONG-TERM CP CONSISTENCY
-
-</div>
-
-<!-- DASHBOARD_START -->
-| Metric | Value |
-|:--|:--|
-| Total Problems Solved | `168` |
-| Total Contests Joined | `38` |
-| Current Focus Range | `1200 – 1600` |
-| Strongest Area | `Implementation (74 problems)` |
-| Weakest Area | `To Be Updated` |
-<!-- DASHBOARD_END -->
