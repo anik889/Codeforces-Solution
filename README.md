@@ -126,9 +126,9 @@ SYSTEM MODE      : CONTINUOUS UPGRADE
 <!-- DASHBOARD_START -->
 | Metric | Value |
 |:--|:--|
-| Total Problems Solved | `232` |
+| Total Problems Solved | `233` |
 | Total Contests Joined | `51` |
 | Current Focus Range | `1200 – 1600` |
-| Strongest Area | `Math (94 problems)` |
+| Strongest Area | `Math (95 problems)` |
 | Weakest Area | `To Be Updated` |
 <!-- DASHBOARD_END -->
