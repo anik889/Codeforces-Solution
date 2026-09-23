@@ -22,5 +22,6 @@ int main(){
     for(ll i=0;i<limit;i++)         a[i]=getDigitSum(i+1);
     for(ll i=1;i<limit;i++)        p[i]=p[i-1]+a[i-1];
     int t; cin>>t;
-    for(ll i=0;i<t;i++)   solve();
+    for(ll i=0;i<t;i++)   
+          solve();
 }
